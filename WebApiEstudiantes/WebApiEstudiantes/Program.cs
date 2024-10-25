@@ -12,13 +12,13 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn
 
 builder.Services.AddControllers();
 
-// ConfiguraciÛn de CORS
+// Configuraci√≥n de CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:5173") // URL de tu aplicaciÛn React
-                          .AllowAnyMethod() // Permitir cualquier mÈtodo (GET, POST, etc.)
-                          .AllowAnyHeader()); // Permitir cualquier cabecera
+    options.AddPolicy("AllowAnyOrigin",
+        builder => builder.AllowAnyOrigin() // Permitir cualquier origen
+            .AllowAnyMethod() // Permitir cualquier m√©todo (GET, POST, etc.)
+            .AllowAnyHeader()); // Permitir cualquier cabecera
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -34,7 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowSpecificOrigin");
+app.UseCors("AllowAnyOrigin"); // Usar la pol√≠tica de CORS definida
 
 app.UseHttpsRedirection();
 

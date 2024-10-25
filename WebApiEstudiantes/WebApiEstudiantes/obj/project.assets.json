@@ -8155,27 +8155,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\josef\\.nuget\\packages\\": {}
+    "/home/arbey/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\josef\\source\\repos\\WebApiEstudiantes\\WebApiEstudiantes\\WebApiEstudiantes.csproj",
+      "projectUniqueName": "/home/arbey/Documentos/proyectos/ut/7mo/arqsw/Front-.Net/WebApiEstudiantes/WebApiEstudiantes/WebApiEstudiantes.csproj",
       "projectName": "WebApiEstudiantes",
-      "projectPath": "C:\\Users\\josef\\source\\repos\\WebApiEstudiantes\\WebApiEstudiantes\\WebApiEstudiantes.csproj",
-      "packagesPath": "C:\\Users\\josef\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\josef\\source\\repos\\WebApiEstudiantes\\WebApiEstudiantes\\obj\\",
+      "projectPath": "/home/arbey/Documentos/proyectos/ut/7mo/arqsw/Front-.Net/WebApiEstudiantes/WebApiEstudiantes/WebApiEstudiantes.csproj",
+      "packagesPath": "/home/arbey/.nuget/packages/",
+      "outputPath": "/home/arbey/Documentos/proyectos/ut/7mo/arqsw/Front-.Net/WebApiEstudiantes/WebApiEstudiantes/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\josef\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/arbey/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8188,11 +8185,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8241,7 +8233,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Estudents";
-import PostEstudent from "./components/PostEstudent";
-import UpdateEstudent from "./components/UpdateEstudent";
+import Home from "./components/estudiantes";
+import PostEstudent from "./components/AgregarEstudiante";
+import UpdateEstudent from "./components/ActualizarEstudiante";
 
 function App() {
   return (

@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiEstudiantes.Context;
 using WebApiEstudiantes.Models;
-
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
 namespace WebApiEstudiantes.Controllers
 {
     [Route("api/[controller]")]
@@ -103,6 +105,37 @@ namespace WebApiEstudiantes.Controllers
         private bool EstudentExists(int id)
         {
             return _context.Students.Any(e => e.id == id);
+        }
+        [HttpGet("pdf/{id}")]
+        public async Task<IActionResult> GetEstudentPdf(int id)
+        {
+            var estudent = await _context.Students.FindAsync(id);
+            if (estudent == null)
+            {
+                return NotFound();
+            }
+
+            using (var memoryStream = new MemoryStream())
+            {
+                // Crear PDF
+                using (var pdfWriter = new PdfWriter(memoryStream))
+                {
+                    using (var pdfDocument = new PdfDocument(pdfWriter))
+                    {
+                        Document document = new Document(pdfDocument);
+                        document.Add(new Paragraph($"ID: {estudent.id}"));
+                        document.Add(new Paragraph($"Nombre: {estudent.Name}"));
+                        document.Add(new Paragraph($"Edad: {estudent.Age}"));
+                        document.Add(new Paragraph($"Email: {estudent.Email}"));
+                        // Puedes agregar más campos aquí si es necesario
+
+                        document.Close();
+                    }
+                }
+
+                var pdfBytes = memoryStream.ToArray();
+                return File(pdfBytes, "application/pdf", $"Estudiante_{estudent.id}.pdf");
+            }
         }
     }
 }
